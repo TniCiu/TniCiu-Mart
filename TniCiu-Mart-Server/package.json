@@ -1,0 +1,12 @@
+{
+  "name": "TniCiu-Mart-Server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/server.js",
+  "license": "MIT",
+  "private": "true",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+  
+}
