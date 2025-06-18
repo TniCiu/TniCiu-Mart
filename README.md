@@ -1,10 +1,10 @@
-# 🥦 TniCiu-Mart - Clean Food E-Commerce Website
+# TniCiu-Mart - Clean Food E-Commerce Website
 
 **TniCiu-Mart** is a clean and modern e-commerce platform for purchasing safe, healthy, and traceable food products. It supports a full set of features for both customers and administrators.
 
 ---
 
-## 🚀 Features
+## Features
 
 * Browse and filter products by category (fruits, vegetables, meat, etc.)
 * Shopping cart and checkout process
@@ -17,26 +17,26 @@
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 TniCiu-Mart/
-🔺🔺 TniCiu-Mart-Server/     # Backend (Node.js, Express, MySQL)
-🔺🔺 TniCiu-Mart/     # Frontend (React.js, MUI, Material UI)
-🔺🔺 README.md
+TniCiu-Mart-Server/     # Backend (Node.js, Express, MySQL)
+TniCiu-Mart/     # Frontend (React.js, MUI, Material UI)
+README.md
 ```
 
 ---
 
-## 📦 System Requirements
+## System Requirements
 
-* Node.js v16 or higher
+* Node.js v20 or higher
 * MySQL 8.x
 * Yarn (preferred) or npm
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
@@ -55,7 +55,7 @@ yarn install       # Install dependencies
 yarn dev           # Start the development server
 ```
 
-> 📌 Make sure to configure your `.env` file with the correct environment variables:
+> Make sure to configure your `.env` file with the correct environment variables:
 >
 > * `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`
 > * `JWT_SECRET`, `CLOUDINARY_API_KEY`, etc.
@@ -72,7 +72,7 @@ yarn dev         # Run the React application
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 
@@ -92,7 +92,7 @@ yarn dev         # Run the React application
 
 ---
 
-## ✨ Key Highlights
+## Key Highlights
 
 * Full admin dashboard for managing products, categories, vouchers, reviews, and news
 * Integrated **VNPay** payment gateway
@@ -104,10 +104,10 @@ yarn dev         # Run the React application
 
 ---
 
-## 🌐 Demo & Test Accounts
+## Demo & Test Accounts
 
-🔗 Live Demo (if available): [https://tniciu-mart.vercel.app](https://tniciu-mart.vercel.app)
-🧲 Test Accounts:
+Live Demo (if available): [https://tniciu-mart.vercel.app](https://tniciu-mart.vercel.app)
+Test Accounts:
 
 ```
 Admin
@@ -121,7 +121,7 @@ Password: user123
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome all contributions! Follow these steps:
 
@@ -135,15 +135,15 @@ We welcome all contributions! Follow these steps:
 
 ---
 
-## 📬 Contact
+## Contact
 
-* 📧 Email: [tincui012l@gmail.com](mailto:your.email@example.com)
-* 🌐 Website: [tniciu-mart.vercel.app](https://tniciu-mart.vercel.app)
-* 🛋️ Facebook/Zalo: TniCiu
+* Email: [tincui012l@gmail.com](mailto:your.email@example.com)
+* Website: [tniciu-mart.vercel.app](https://tniciu-mart.vercel.app)
+* Facebook/Zalo: TniCiu
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
