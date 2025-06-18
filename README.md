@@ -6,14 +6,14 @@
 
 ## 🚀 Features
 
-* 🛕️ Browse and filter products by category (fruits, vegetables, meat, etc.)
-* 🛒 Shopping cart and checkout process
-* 🎟️ Apply vouchers and promotional discounts
-* 📦 Order & invoice management with status tracking
-* 📵 News/blog section about food, health, and promotions
-* 🧠 AI chatbot for customer support and product recommendations
-* 👤 User registration, login, and profile management
-* 🔐 Role-based access control for admin and users
+* Browse and filter products by category (fruits, vegetables, meat, etc.)
+* Shopping cart and checkout process
+* Apply vouchers and promotional discounts
+* Order & invoice management with status tracking
+* News/blog section about food, health, and promotions
+* AI chatbot for customer support and product recommendations
+* User registration, login, and profile management
+* Role-based access control for admin and users
 
 ---
 
@@ -67,7 +67,7 @@ yarn dev           # Start the development server
 ```bash
 cd ../TniCiu-Mart-Client
 yarn install       # Install frontend dependencies
-yarn start         # Run the React application
+yarn dev         # Run the React application
 ```
 
 ---
