@@ -7,6 +7,7 @@ import { APIs_V1 } from "./routes/v1";
 const START_SERVER = () => {
   const app = express();
 
+  app.use(express.json())
   app.use(`/${env.VERSION}`, APIs_V1);
 
   app.listen(env.APP_PORT, env.APP_HOST,() => {
@@ -23,9 +24,9 @@ const START_SERVER = () => {
 (async () => {
   try {
     console.log("1. connecting from Database with Mysql...");
-    CONNECT_DB();
+    await CONNECT_DB();
     console.log("2. connected to mysql with Mysql2/Promise succsessfully!");
-    START_SERVER();
+    await START_SERVER();
   } catch (error) {
     console.error("Error connecting to Mysql: ", error);
     process.exit(0);
