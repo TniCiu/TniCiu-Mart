@@ -16,9 +16,11 @@ const createNew = async (req, res, next) => {
     })
     try {
         console.log(req.body)
-
-        await schema.validateAsync(req.body)
-        res.status(StatusCodes.CREATED).json({ message: 'POST from validation: API create new user' })
+        // Chỉ định { abortEarly: false } để trả về tất cả các lỗi thay vì dừng lại ở lỗi đầu tiên
+        // Điều này sẽ giúp người dùng biết được tất cả các lỗi trong dữ liệu của họ
+        await schema.validateAsync(req.body, {abortEarly: false})
+        // Note: Nếu không có lỗi thì sẽ tiếp tục gọi next() để chuyển sang tầng tiếp theo
+        next()
     } catch (error) {
         console.log(new Error(error))
         res.status(StatusCodes.UNPROCESSABLE_ENTITY).json({
