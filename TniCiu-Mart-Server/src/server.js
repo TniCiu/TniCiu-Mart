@@ -3,12 +3,15 @@ import { env } from "./config/environment";
 import { CONNECT_DB, CLOSE_DB } from "./config/mysql";
 import exitHook from "async-exit-hook";
 import { APIs_V1 } from "./routes/v1";
+import { errorhandlingMiddleware } from "./middlewares/errorHandling.middleware";
 
 const START_SERVER = () => {
   const app = express();
 
   app.use(express.json())
   app.use(`/${env.VERSION}`, APIs_V1);
+  // Error handling middleware
+  app.use(errorhandlingMiddleware);
 
   app.listen(env.APP_PORT, env.APP_HOST,() => {
     console.log(`3. Server running at http://${env.APP_HOST}:${env.APP_PORT}`);

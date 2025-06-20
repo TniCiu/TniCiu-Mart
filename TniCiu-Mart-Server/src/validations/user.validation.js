@@ -1,5 +1,6 @@
 import { StatusCodes } from 'http-status-codes'
 import Joi from 'joi'
+import ApiError from '~/utils/ApiError'
 /* 
 * Note: Mặc định chúng ta không cần phải custom message ở phía BE làm gì, vì để cho Front-end tự 
 validate và custom message phía BE cho đẹp.
@@ -22,10 +23,7 @@ const createNew = async (req, res, next) => {
         // Note: Nếu không có lỗi thì sẽ tiếp tục gọi next() để chuyển sang tầng tiếp theo
         next()
     } catch (error) {
-        console.log(new Error(error))
-        res.status(StatusCodes.UNPROCESSABLE_ENTITY).json({
-            errors: new Error(error).message
-        })
+        next(new ApiError(StatusCodes.UNPROCESSABLE_ENTITY, new Error(error).message))
 
     }
 }
