@@ -41,7 +41,7 @@ README.md
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/TniCiu-Mart.git
+git clone https://github.com/TniCiu/TniCiu-Mart
 cd TniCiu-Mart
 ```
 
