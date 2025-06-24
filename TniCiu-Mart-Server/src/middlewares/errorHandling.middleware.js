@@ -1,4 +1,5 @@
 import { StatusCodes } from "http-status-codes";
+import { env } from "~/config/environment";
 
 export const errorhandlingMiddleware = (err, req, res, next) => {
 
@@ -15,6 +16,10 @@ export const errorhandlingMiddleware = (err, req, res, next) => {
         // Note: Không nên trả về stack trace trong môi trường sản xuất để tránh lộ thông tin nhạy cảm
         stack : err.stack 
     }
+    // Nếu môi trường là production thì không trả về stack trace
+    if(env.BUILD_MODE !== 'dev' ) delete responseError.stack
+
+
     console.error(responseError);
     
     res.status(responseError.statusCode).json(responseError)
