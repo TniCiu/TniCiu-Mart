@@ -4,34 +4,33 @@ import { CONNECT_DB, CLOSE_DB } from "./config/mysql";
 import exitHook from "async-exit-hook";
 import { APIs_V1 } from "./routes/v1";
 import { errorhandlingMiddleware } from "./middlewares/errorHandling.middleware";
-
 const START_SERVER = () => {
   const app = express();
 
   app.use(express.json())
-  app.use(`/${env.VERSION}`, APIs_V1);
+  app.use(`/${env.VERSION}`, APIs_V1)
   // Error handling middleware
-  app.use(errorhandlingMiddleware);
+  app.use(errorhandlingMiddleware)
 
   app.listen(env.APP_PORT, env.APP_HOST,() => {
-    console.log(`3. Server running at http://${env.APP_HOST}:${env.APP_PORT}`);
+    console.log(`3. Server running at http://${env.APP_HOST}:${env.APP_PORT}`)
   });
 
   exitHook(() => {
-    console.log("4. Disconnecting from Database with Mysql...");
+    console.log("4. Disconnecting from Database with Mysql...")
     CLOSE_DB();
-    console.log("5. Disconnected from Database with Mysql! ");
+    console.log("5. Disconnected from Database with Mysql! ")
   });
 };
 
 (async () => {
   try {
-    console.log("1. connecting from Database with Mysql...");
-    await CONNECT_DB();
-    console.log("2. connected to mysql with Mysql2/Promise succsessfully!");
-    await START_SERVER();
+    console.log("1. connecting from Database with Mysql...")
+    await CONNECT_DB()
+    console.log("2. connected to mysql with Mysql2/Promise succsessfully!")
+    START_SERVER()
   } catch (error) {
-    console.error("Error connecting to Mysql: ", error);
-    process.exit(0);
+    console.error("Error connecting to Mysql: ", error)
+    process.exit(0)
   }
-})();
+})()

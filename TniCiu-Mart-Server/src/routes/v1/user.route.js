@@ -9,5 +9,6 @@ router.route("/")
     res.status(StatusCodes.OK).json({ message: "Note: API get list users" });
   })
   .post(userValidation.createNew,userController.createNew)
+  
 
 export const UserRoute = router;
