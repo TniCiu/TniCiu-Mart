@@ -1,5 +1,4 @@
-import { password } from "input";
-import Joi, { date } from "joi";
+import Joi from "joi";
 import {
   USER_ROLES,
   USER_GENDERS,
@@ -39,10 +38,10 @@ const USER_COLLECTION_SCHEMA = Joi.object({
   isEmailVerified: Joi.boolean().default(false),
   createdAt: Joi.date().default(Date.now),
   updatedAt: Joi.date().default(null),
-  _destroy: Joi.boolean().default(false)
+  _destroy: Joi.boolean().default(false),
 });
 
 export const UserModel = {
-    USER_COLLECTION_NAME,
-    USER_COLLECTION_SCHEMA
-}
+  USER_COLLECTION_NAME,
+  USER_COLLECTION_SCHEMA,
+};
