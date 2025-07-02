@@ -1,9 +1,10 @@
-import express from "express";
-import { env } from "./config/environment";
-import { CONNECT_DB, CLOSE_DB } from "./config/mysql";
-import exitHook from "async-exit-hook";
-import { APIs_V1 } from "./routes/v1";
-import { errorhandlingMiddleware } from "./middlewares/errorHandling.middleware";
+import express from "express"
+import { env } from "./config/environment"
+import { CONNECT_DB, CLOSE_DB } from "./config/mysql"
+import exitHook from "async-exit-hook"
+import { APIs_V1 } from "./routes/v1"
+import { errorhandlingMiddleware } from "./middlewares/errorHandling.middleware"
+
 const START_SERVER = () => {
   const app = express();
 
