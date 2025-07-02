@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
-import ApiError from "~/utils/ApiError.js";
 import { UserService } from "~/services/user.service.js";
+
 const createNew = async (req, res, next) => {
   try {
     const createdUser = await UserService.createUser(req.body);
