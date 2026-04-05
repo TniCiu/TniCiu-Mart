@@ -4,12 +4,12 @@ import { CONNECT_DB, CLOSE_DB } from "./config/mysql"
 import exitHook from "async-exit-hook"
 import { APIs_V1 } from "./routes/v1"
 import { errorhandlingMiddleware } from "./middlewares/errorHandling.middleware"
-
+import { UserModel } from "./models/user.model"
 const START_SERVER = () => {
   const app = express();
 
   app.use(express.json())
-  app.use(`/${env.VERSION}`, APIs_V1)
+  app.use(`/api/${env.VERSION}`, APIs_V1)
   // Error handling middleware
   app.use(errorhandlingMiddleware)
 
@@ -17,6 +17,7 @@ const START_SERVER = () => {
     console.log(`3. Server running at http://${env.APP_HOST}:${env.APP_PORT}`)
   });
 
+  UserModel.initUsersTable();
   exitHook(() => {
     console.log("4. Disconnecting from Database with Mysql...")
     CLOSE_DB();

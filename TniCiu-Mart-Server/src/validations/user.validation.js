@@ -13,7 +13,8 @@ const createNew = async (req, res, next) => {
     const schema = Joi.object({
         name: Joi.string().required().min(3).max(50).trim().strict(),
         phone: Joi.string().pattern(/^(0|\+84)(\d{9})$/).required(),
-        email: Joi.string().email({ tlds: { allow: false } }).required()
+        email: Joi.string().email({ tlds: { allow: false } }).required(),
+        password: Joi.string().required().min(6).max(255).strict(),
     })
     try {
         console.log(req.body)
